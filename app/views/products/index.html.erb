@@ -1,0 +1,13 @@
+<h1>Products</h1>
+<h4><%= link_to 'New Product', new_product_path %></h4>
+<ul>
+  <% @products.each { |p| %>
+    <li>
+      <h3><%= p.name %></h3>
+      <h4>Listed in <%= p.category %></h4>
+      <p><%= p.description %></p>
+      <%= link_to 'View', product_path(p) %>
+      <%= link_to 'Edit', edit_product_path(p) %>
+    </li>
+  <% } %>
+</ul>
