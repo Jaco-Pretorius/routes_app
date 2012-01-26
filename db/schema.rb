@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(:version => 20120105031215) do
     t.string   "name"
     t.string   "description"
     t.string   "category"
+    t.boolean  "duplicate",    :default => false
+    t.integer  "duplicate_of"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

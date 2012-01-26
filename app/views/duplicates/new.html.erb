@@ -1,0 +1,13 @@
+<h1>Mark <%= @product.name %> as Duplicate</h1>
+<h4>Listed in <%= @product.category %></h4>
+<p><%= @product.description %></p>
+
+<%= form_tag(:action => "create") do %>
+  <h2>This is a duplicate of:</h2>
+  
+  <%= select_tag(:duplicate_of_id, options_from_collection_for_select(@all_products, :id, :name)) %>
+  
+  <%= submit_tag('Mark as Duplicate') %>
+<% end %>
+
+<%= link_to 'Back to All products', products_path %>

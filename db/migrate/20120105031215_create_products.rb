@@ -4,6 +4,8 @@ class CreateProducts < ActiveRecord::Migration
       t.string :name
       t.string :description
       t.string :category
+      t.boolean :duplicate, :default => false
+      t.integer :duplicate_of
 
       t.timestamps
     end

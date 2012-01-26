@@ -1,10 +1,10 @@
-RoutesApp::Application.routes.draw do
-  # get 'products' => 'products#index', :as => 'products'  
-  # get 'product/:id' => 'products#show', :as => 'product'
-  # get 'product/:category/:id' => 'products#show', :as => 'category_product'
+RoutesApp::Application.routes.draw do  
+  resources :products do
+    resource :duplicate, :controller => 'duplicates', :only => [:new, :create]
+  end
   
-  resources :products
-  # resources :products, :only => [:index, :show]
-
+  # get 'products/duplicate/:id' => 'products#new_duplicate', :as => 'new_duplicate'
+  # post 'products/duplicate/:id' => 'products#create_duplicate'
+  
   root :to => 'products#index'
 end
